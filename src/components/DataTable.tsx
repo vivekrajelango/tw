@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import LoaderComponent from './common/Loader';
 import { useRouter } from 'next/navigation';
 import Table from './common/Table';
-import { SearchClientColumns } from '@/constants/constants';
+import { ClientAPIData, SearchClientColumns } from '@/constants/constants';
 
 
 interface ClientSearchProps {
@@ -15,7 +15,6 @@ interface ClientSearchProps {
     inception: string,
     matterCount: number
 }
-
 
 const DataTable = ({ resultData }: any) => {
     const dispatch = useDispatch();
@@ -28,6 +27,7 @@ const DataTable = ({ resultData }: any) => {
         key: keyof ClientSearchProps;
         direction: 'asc' | 'desc';
     } | null>(null);
+
     const [entriesPerPage, setEntriesPerPage] = useState(10);
     const [currentPage, setCurrentPage] = useState(1);
     const totalPages = Math.ceil(data.length / entriesPerPage);
@@ -64,7 +64,7 @@ const DataTable = ({ resultData }: any) => {
     const clientDetails= async(clientItems:any)=>{
         setLoading(true);
         await dispatch(clientDetailsById(clientItems.clientId));
-        await dispatch(matterSearch(clientItems.clientId, 'NAME', 'ASCENDING', 2, 50))
+        await dispatch(matterSearch(clientItems.clientId, ClientAPIData.CLIENT_ORDER_BY, ClientAPIData.SEARCH_ORDER, ClientAPIData.INDEX, ClientAPIData.OFF_SET))
         route.push('/details');
         setLoading(false);
     }
@@ -77,9 +77,9 @@ const DataTable = ({ resultData }: any) => {
     return (
         <section className="p-5 bg-white rounded-lg border border-gray-200 shadow-md ">
             <div className="flex justify-between items-center mb-4">
-                <h1 className='text-gray-600'>Client Results</h1>
-                <div className='flex flex-row gap-3 text-gray-600'>
-                    <div className="flex items-center gap-2">
+                <h1 className='text-blue-400 text-xl'>Client Results</h1>
+                <div className='flex flex-row gap-3'>
+                    <div className="flex items-center gap-2 text-blue-400">
                         <span>entries per page</span>
                         <select
                             value={entriesPerPage}

@@ -111,10 +111,13 @@ const DetailsPage = () => {
 
     return (
         <section className="bg-white">
-            <div className="m-2 md:my-8 mx-4 md:p-4 h-[100vh] md:w-[80%] md:mx-auto">
+            <div className="m-2 md:my-8 mx-4 p-2 py-6 md:p-4 h-[100vh] md:w-[80%] md:mx-auto">
                 <div className="flex flex-row justify-between text-center mb-6">
-                    <h2 className="text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900">Client Details</h2>
-                    <button onClick={() => router.back()} className="flex flex-row gap-1 text-black hover:bg-gray-200 border focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-6 py-3">
+                    <h1
+                        className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 animate-gradientShift animate-blink">
+                        Client Details
+                    </h1>
+                    <button onClick={() => router.back()} className="flex flex-row gap-1 text-blue-600 hover:bg-gray-200 border focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-6 py-3">
                         <ArrowLeft size={20} /> Go back
                     </button>
                 </div>
@@ -138,7 +141,7 @@ const DetailsPage = () => {
                         <p className="font-light text-gray-500 ">{clientDetails?.address?.county} {clientDetails?.address?.postcode}</p>
                     </article>
 
-                    <article className="p-3 bg-white rounded-lg border border-gray-200 shadow-md md:w-[60%] overflow-x-auto">
+                    <article className="md:p-3 bg-white rounded-lg border border-gray-200 shadow-md md:w-[60%] overflow-x-auto">
                         <Table
                             data={clientDetails?.people || []}
                             columns={ClientDetailsColumns}
@@ -155,12 +158,12 @@ const DetailsPage = () => {
                 </div>
 
                 <div className='py-8'>
-                    <article className="p-5 bg-white rounded-lg border border-gray-200 shadow-md overflow-x-auto">
-                        <div className="flex justify-between items-center mb-4">
-                            <h1 className='text-gray-600'>Matters</h1>
+                    <article className="md:p-5 bg-white rounded-lg border border-gray-200 shadow-md overflow-x-auto">
+                        <div className="flex justify-between items-center mb-4 p-5 md:p-1">
+                            <h1 className='text-blue-400 text-xl'>Matters</h1>
                             <div className='flex flex-row gap-3 text-gray-600'>
                                 <div className="flex items-center gap-2">
-                                    <span>entries per page</span>
+                                    <span className='text-blue-400'>entries per page</span>
                                     <select
                                         value={entriesPerPage}
                                         onChange={(e) => handleEntriesPerPageChange(e.target.value)}

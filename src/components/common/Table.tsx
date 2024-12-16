@@ -21,7 +21,7 @@ interface TableProps {
     footer?:boolean;
 }
 
-const Table: React.FC<TableProps> = ({ data,fullData, columns, sortConfig, handleSort, onRowClick, handlePageChange, currentPage, totalPages,footer=true }) => {
+const Table = ({ data,fullData, columns, sortConfig, handleSort, onRowClick, handlePageChange, currentPage, totalPages,footer=true }:TableProps) => {
     
     return (
         <>
@@ -31,7 +31,7 @@ const Table: React.FC<TableProps> = ({ data,fullData, columns, sortConfig, handl
                         {columns.map((column, index) => (
                             <th
                                 key={index}
-                                className="px-6 py-3 text-left text-sm font-medium text-gray-500 cursor-pointer"
+                                className="px-4 py-3 text-left text-md font-medium text-gray-500 cursor-pointer"
                                 onClick={() => handleSort?.(column.dataKey)}
                             >
                                 {column.label}
@@ -52,7 +52,7 @@ const Table: React.FC<TableProps> = ({ data,fullData, columns, sortConfig, handl
                             onClick={() => onRowClick?.(item)}
                         >
                             {columns.map((column) => (
-                                <td key={column.dataKey} className="px-6 py-4 text-sm text-gray-600">
+                                <td key={column.dataKey} className="px-4 py-3 text-sm text-gray-600">
                                     {/* {item[column.dataKey]} */}
                                     {column.dataKey==="inception" || column.dataKey==="matterDate" ? dayjs(item[column.dataKey]).format(DateFormats.DATE_WITH_SLASH) : item[column.dataKey]}
                                 </td>
@@ -62,7 +62,7 @@ const Table: React.FC<TableProps> = ({ data,fullData, columns, sortConfig, handl
                 </tbody>
             </table>
             {footer && 
-            <div className="mt-4 flex justify-between items-center text-gray-500">
+            <div className="mt-4 flex flex-col gap-3 md:flex-row justify-between items-center text-gray-500 mb-5">
                 <div className="text-sm text-gray-500">
                     Showing {data.length} of {fullData?.length} entries
                 </div>

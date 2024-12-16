@@ -6,6 +6,8 @@ import { ClientSearchResponse, ClientSearchResults } from '@/types/Schema';
 import DataTable from './DataTable';
 import { useSelector } from 'react-redux';
 import { AppState } from '@/store/reducers';
+import BlurTable from './common/BlurTable';
+import { ClientAPIData } from '@/constants/constants';
 
 const HomePage = () => {
     const dispatch = useDispatch();
@@ -14,7 +16,7 @@ const HomePage = () => {
     const [isSearchResults, setSearchResults] = useState(searchResults);
 
     const searchClient = () => {
-        dispatch(clientSearch(`${isText ? isText : ''}`, 'NAME', 'ASCENDING', 2, 50));
+        dispatch(clientSearch(`${isText ? isText : ''}`, ClientAPIData.CLIENT_ORDER_BY, ClientAPIData.SEARCH_ORDER, ClientAPIData.INDEX, ClientAPIData.OFF_SET));
     }
 
     const searchHandler=(e:any)=>{
@@ -32,7 +34,7 @@ const HomePage = () => {
 
     return (
         <>
-            <div className='flex flex-col md:flex-row items-center gap-5 p-7 bg-gradient-to-l from-cyan-500 to-blue-500'>
+            <div className='flex flex-col md:flex-row items-center gap-5 p-7 bg-gradient-to-l from-cyan-500 to-blue-500 overflow-scroll-y'>
                 <h1 className='text-3xl text-white'>Client Search</h1>
                 <form className="min-w-[400px] px-5">
                     <label className="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
@@ -47,9 +49,10 @@ const HomePage = () => {
                 </form>
                 <button onClick={searchClient} className="text-white bg-blue-800 hover:bg-blue-700 border focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-6 py-3">Search</button>
             </div>
-            <section className='container w-full mx-auto my-5'>
+            <section className='container w-full mx-auto my-8'>
+            {!searchResults.length && <h1 className='text-gray-700 text-center mt-8'>Please search using the search above</h1>}
             {isSearchResults.length ?
-                <DataTable resultData={isSearchResults} /> : <h1 className='text-black'>No Data</h1>
+                <DataTable resultData={isSearchResults} /> : <BlurTable />
             }
             </section>
         </>

@@ -1,3 +1,11 @@
+export const ClientAPIData = {
+    FILTER: '{*}',
+    CLIENT_ORDER_BY: 'NAME',
+    SEARCH_ORDER: 'ASCENDING',
+    INDEX: 2,
+    OFF_SET: 50
+}
+
 export const DateFormats = {
     DATE_WITH_SLASH: 'DD/MM/YYYY',
     MONTH_LETTER_WITH_YEAR: 'MMM YYYY'
