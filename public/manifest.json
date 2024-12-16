@@ -1,0 +1,21 @@
+{
+    "name": "tw",
+    "short_name": "tw",
+    "description": "tw",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#f9f3f0",
+    "theme_color": "#f9f3f0",
+    "icons": [
+      {
+        "src": "/icon-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/icon-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
