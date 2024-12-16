@@ -37,26 +37,29 @@ DayJs
 
 2) You can either type the company name in the textbox (eg: Accenture UK) or click search with an empty textbox
 
-   ![image](https://github.com/user-attachments/assets/ecf847d0-d279-415d-b168-17b66ecbbe5e)
-![image](https://github.com/user-attachments/assets/4afea180-8110-4010-8ab1-c5c24c728963)
+  ![image](https://github.com/user-attachments/assets/0c17515e-b122-4d05-b9e4-7ddf5bf60cb5)
+
+  ![image](https://github.com/user-attachments/assets/f72c7afa-1e64-46a9-a9d5-9d28c9809a19)
+
 
 3) If you click on any of the row, the page will redirect to client details page like below
 
-![image](https://github.com/user-attachments/assets/a6d7cc3c-1a8e-40ed-916c-9a69372f0bb8)
+![image](https://github.com/user-attachments/assets/b19efee5-6a18-4daa-a28c-9f6446b16103)
 
 
 4) When you click on the any columns in Table header, the columns will be sorted ascending/descending order
    
-![image](https://github.com/user-attachments/assets/57d63620-6414-47bb-80a0-185de42c4ee1)
+![image](https://github.com/user-attachments/assets/df6efbbe-1655-430a-a360-fc90602648a3)
 
 
 5) When you clicking on matters row, user can able to view the matters details with pop-up
 
-![image](https://github.com/user-attachments/assets/536d817b-b174-495c-983f-82cd950ec4e2)
+![image](https://github.com/user-attachments/assets/9592dbae-ef49-4d00-8e4c-b40e5103fb1f)
 
 ## Mobile view and Progressive web app
 
-![image](https://github.com/user-attachments/assets/5ff8b753-8488-4cda-9d93-2f322a40164e)
+![image](https://github.com/user-attachments/assets/f5d117f7-3880-4425-a77c-d23f7644123f)
+
 
 For Progresive web app
 
