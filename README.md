@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) on top of React
 
 ## Getting Started
 
@@ -71,6 +71,10 @@ For Progresive web app
     Desktop: Click the install icon in the browser's address bar.
 
 3) Launch the App: After installation, open the app directly from your device’s home screen or app list.
+
+## Live Demo
+
+Click here - https://tw.vivekrajelango.in/ - Mobile/Desktop
  
 
 
