@@ -5,8 +5,8 @@ import { DateFormats } from '@/constants/constants';
 const MatterDetails=({data}:any)=> {
   return (
     <section className='p-10'>
-        <div className='flex flex-row gap-4 justify-between'>
-        <div className='flex flex-col text-gray-700'>
+        <div className='flex flex-row gap-3 justify-between'>
+        <div className='flex flex-col text-gray-700 '>
             <p className='text-blue-400'>Matter Name</p>
             <p>{data?.matterName}</p>
         </div>

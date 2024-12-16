@@ -114,7 +114,7 @@ const DetailsPage = () => {
             <div className="m-2 md:my-8 mx-4 p-2 py-6 md:p-4 h-[100vh] md:w-[80%] md:mx-auto">
                 <div className="flex flex-row justify-between text-center mb-6">
                     <h1
-                        className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 animate-gradientShift animate-blink">
+                        className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500">
                         Client Details
                     </h1>
                     <button onClick={() => router.back()} className="flex flex-row gap-1 text-blue-600 hover:bg-gray-200 border focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-6 py-3">
@@ -123,25 +123,25 @@ const DetailsPage = () => {
                 </div>
 
 
-                <div className="flex flex-col md:flex-row gap-4">
-                    <article className="p-3 md:p-6 bg-white rounded-lg border border-gray-200 shadow-md w-full md:w-[40%]">
-                        <h2 className="text-gray-600 mb-2">Client Name:
-                            <span className="font-light text-gray-500 ml-2">{clientDetails?.name}</span>
+                <div className="flex">
+                    <article className="p-3 md:p-6 bg-blue-200 rounded-lg border border-gray-200 shadow-md w-full md:w-[100%] flex flex-col md:flex-row gap-3">
+                        <div className='width-1/2'>
+                        <h2 className="text-blue-600 mb-2">Client Name:
+                            <span className="font-light text-gray-700 ml-2">{clientDetails?.name}</span>
                         </h2>
-                        <h2 className="text-gray-600 mb-2">Client Description:
-                            <span className="font-light text-gray-500 ml-2">{clientDetails?.description}</span>
+                        <h2 className="text-blue-600 mb-2">Client Description:
+                            <span className="font-light text-gray-700 ml-2">{clientDetails?.description}</span>
                         </h2>
-                        <h2 className="text-gray-600 mb-2">Client Description:
-                            <span className="font-light text-gray-500 ml-2">{dayjs(clientDetails?.inceptionDate).format(DateFormats.DATE_WITH_SLASH)}</span>
+                        <h2 className="text-blue-600 mb-2">Client Description:
+                            <span className="font-light text-gray-700 ml-2">{dayjs(clientDetails?.inceptionDate).format(DateFormats.DATE_WITH_SLASH)}</span>
                         </h2>
-                        <h3 className="text-gray-600 mb-1">Address: </h3>
-                        <p className="font-light text-gray-500 ">{clientDetails?.address?.addressLine1}</p>
-                        <p className="font-light text-gray-500 ">{clientDetails?.address?.addressLine2}</p>
-                        <p className="font-light text-gray-500 ">{clientDetails?.address?.city}</p>
-                        <p className="font-light text-gray-500 ">{clientDetails?.address?.county} {clientDetails?.address?.postcode}</p>
-                    </article>
-
-                    <article className="md:p-3 bg-white rounded-lg border border-gray-200 shadow-md md:w-[60%] overflow-x-auto">
+                        <h3 className="text-blue-600 mb-1">Address: </h3>
+                        <p className="font-light text-gray-700 ">{clientDetails?.address?.addressLine1}</p>
+                        <p className="font-light text-gray-700 ">{clientDetails?.address?.addressLine2}</p>
+                        <p className="font-light text-gray-700 ">{clientDetails?.address?.city}</p>
+                        <p className="font-light text-gray-700 ">{clientDetails?.address?.county} {clientDetails?.address?.postcode}</p>
+                        </div>
+                        <div className='md:w-[60%] overflow-x-auto'>
                         <Table
                             data={clientDetails?.people || []}
                             columns={ClientDetailsColumns}
@@ -154,16 +154,17 @@ const DetailsPage = () => {
                             totalPages={clientTotalPages}
                             footer={false}
                         />
+                        </div>
                     </article>
                 </div>
 
                 <div className='py-8'>
-                    <article className="md:p-5 bg-white rounded-lg border border-gray-200 shadow-md overflow-x-auto">
+                    <article className="md:p-5 bg-gray-100 rounded-lg border border-gray-200 shadow-md overflow-x-auto">
                         <div className="flex justify-between items-center mb-4 p-5 md:p-1">
-                            <h1 className='text-blue-400 text-xl'>Matters</h1>
+                            <h1 className='text-pink-500 text-xl'>Matters</h1>
                             <div className='flex flex-row gap-3 text-gray-600'>
                                 <div className="flex items-center gap-2">
-                                    <span className='text-blue-400'>entries per page</span>
+                                    <span className='text-pink-400'>entries per page</span>
                                     <select
                                         value={entriesPerPage}
                                         onChange={(e) => handleEntriesPerPageChange(e.target.value)}

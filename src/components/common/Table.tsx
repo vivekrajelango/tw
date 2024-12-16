@@ -27,11 +27,11 @@ const Table = ({ data,fullData, columns, sortConfig, handleSort, onRowClick, han
         <>
             <table className="min-w-full bg-white border border-gray-200">
                 <thead>
-                    <tr className="bg-gray-200">
+                    <tr className="bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500">
                         {columns.map((column, index) => (
                             <th
                                 key={index}
-                                className="px-4 py-3 text-left text-md font-medium text-gray-500 cursor-pointer"
+                                className="px-4 py-3 text-left text-md font-medium text-white cursor-pointer"
                                 onClick={() => handleSort?.(column.dataKey)}
                             >
                                 {column.label}

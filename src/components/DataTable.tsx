@@ -75,11 +75,11 @@ const DataTable = ({ resultData }: any) => {
     },[isLoading,resultData])
 
     return (
-        <section className="p-5 bg-white rounded-lg border border-gray-200 shadow-md ">
+        <section className="p-5 bg-gray-100 rounded-lg border border-gray-200 shadow-md ">
             <div className="flex justify-between items-center mb-4">
-                <h1 className='text-blue-400 text-xl'>Client Results</h1>
+                <h1 className='text-pink-500 text-xl'>Client Results</h1>
                 <div className='flex flex-row gap-3'>
-                    <div className="flex items-center gap-2 text-blue-400">
+                    <div className="flex items-center gap-2 text-pink-500">
                         <span>entries per page</span>
                         <select
                             value={entriesPerPage}
